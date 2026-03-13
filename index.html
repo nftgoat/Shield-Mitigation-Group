@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shield Mitigation Group | Emergency Roof Tarping & Water Mitigation – Orlando, FL</title>
+  <meta name="description" content="24/7 emergency roof tarping, water extraction, and storm mitigation services within 3 hours of Orlando, FL. We bill insurance directly. Call (407) 436-9921.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --shield-red: #C0392B;
+      --shield-red-dark: #922b21;
+      --shield-yellow: #F39C12;
+      --dark-bg: #0d0d0d;
+      --dark-card: #161616;
+      --dark-border: #2a2a2a;
+      --text-primary: #f0ece4;
+      --text-muted: #8a8a8a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--dark-border);
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,13,0.96);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--text-primary); }
+    .logo-text span { color: var(--shield-red); }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta { background: var(--shield-red) !important; color: #fff !important; padding: 8px 18px; border-radius: 3px; }
+    .nav-cta:hover { background: var(--shield-red-dark) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 40px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(192,57,43,0.04) 40px, rgba(192,57,43,0.04) 41px);
+    }
+    .hero-accent {
+      position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+      width: 600px; height: 600px; opacity: 0.06;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.4);
+      color: #e8a09a; font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; padding: 6px 14px; border-radius: 2px;
+      margin-bottom: 28px; width: fit-content;
+    }
+    .badge-dot { width: 7px; height: 7px; background: var(--shield-red); border-radius: 50%; animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+    .hero-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(62px, 10vw, 110px); line-height: 0.92; letter-spacing: 1px; max-width: 800px; margin-bottom: 24px; }
+    .hero-headline span { color: var(--shield-red); }
+    .hero-sub { font-size: 17px; color: var(--text-muted); max-width: 520px; line-height: 1.7; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+    .btn-primary { background: var(--shield-red); color: #fff; padding: 14px 30px; border-radius: 3px; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.1s; display: inline-block; }
+    .btn-primary:hover { background: var(--shield-red-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--text-primary); padding: 14px 30px; border-radius: 3px; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--dark-border); transition: border-color 0.2s; display: inline-block; }
+    .btn-outline:hover { border-color: #555; }
+
+    .hero-stats { display: flex; gap: 48px; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--dark-border); flex-wrap: wrap; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--text-primary); line-height: 1; }
+    .stat-num span { color: var(--shield-red); }
+    .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* TICKER */
+    .ticker { background: var(--shield-red); padding: 10px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: ticker 22s linear infinite; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.9); }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* SECTIONS */
+    section { padding: 80px 40px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--shield-red); margin-bottom: 12px; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 52px); letter-spacing: 1px; line-height: 1; margin-bottom: 16px; }
+    .section-sub { color: var(--text-muted); font-size: 15px; max-width: 520px; margin-bottom: 48px; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--dark-border); border: 1px solid var(--dark-border); }
+    .service-card { background: var(--dark-card); padding: 32px 28px; transition: background 0.2s; }
+    .service-card:hover { background: #1e1e1e; }
+    .service-card.featured { background: #1a0e0e; }
+    .service-card.featured:hover { background: #1f1212; }
+    .service-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: rgba(192,57,43,0.2); color: #e8a09a; padding: 3px 10px; border-radius: 2px; margin-bottom: 16px; }
+    .service-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+    .service-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; }
+    .service-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    /* PROCESS */
+    .process-section { background: var(--dark-card); border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .step { padding: 36px 28px; border-right: 1px solid var(--dark-border); }
+    .step:last-child { border-right: none; }
+    .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--dark-border); line-height: 1; margin-bottom: 12px; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* WHY */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .why-item { border-left: 3px solid var(--shield-red); padding-left: 20px; }
+    .why-title { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .why-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVERAGE */
+    .coverage-section { background: var(--dark-card); }
+    .coverage-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .insurance-note { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.25); border-radius: 4px; padding: 20px 24px; margin-top: 32px; }
+    .insurance-note strong { display: block; color: var(--shield-yellow); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+    .insurance-note p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* CTA */
+    .cta-banner { background: var(--shield-red); padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+    .cta-bg { position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(0,0,0,0.06) 30px, rgba(0,0,0,0.06) 31px); }
+    .cta-banner h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 6vw, 68px); letter-spacing: 1px; position: relative; margin-bottom: 12px; color: #fff; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 32px; position: relative; }
+    .phone-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 58px); color: #fff; letter-spacing: 3px; display: block; margin-bottom: 24px; position: relative; text-decoration: none; }
+    .btn-white { background: #fff; color: var(--shield-red); padding: 14px 32px; border-radius: 3px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; display: inline-block; position: relative; transition: transform 0.1s; }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { padding: 40px 40px 30px; border-top: 1px solid var(--dark-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-copy { font-size: 12px; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    hr.divider { border: none; border-top: 1px solid var(--dark-border); margin: 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 14px; }
+      .nav-links li:not(:last-child) { display: none; }
+      section { padding: 60px 20px; }
+      .hero { padding: 60px 20px 40px; }
+      .hero-stats { gap: 28px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .coverage-content { grid-template-columns: 1fr; gap: 32px; }
+      .cta-banner { padding: 48px 20px; }
+      footer { padding: 32px 20px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">
+      <svg width="38" height="46" viewBox="0 0 38 46" fill="none">
+        <path d="M19 2L4 9V21C4 31.5 11 40.5 19 44C27 40.5 34 31.5 34 21V9L19 2Z" fill="#C0392B" stroke="#922b21" stroke-width="1"/>
+        <path d="M12 22l5 5 9-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">SHIELD <span>MITIGATION</span> GROUP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#coverage">Coverage</a></li>
+      <li><a href="#contact" class="nav-cta">Emergency Line</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <svg class="hero-accent" viewBox="0 0 500 580" fill="none">
+      <path d="M250 20L30 110V280C30 420 140 530 250 560C360 530 470 420 470 280V110L250 20Z" fill="#C0392B"/>
+    </svg>
+    <div style="position:relative;">
+      <div class="badge"><div class="badge-dot"></div>Available 24/7 · Florida Storm Response</div>
+      <h1 class="hero-headline">PROTECT<br>WHAT<br><span>MATTERS.</span></h1>
+      <p class="hero-sub">Emergency roof tarping and water mitigation services across Florida. We respond fast, document everything, and bill your insurance directly.</p>
+      <div class="hero-actions">
+        <a href="tel:+14074369921" class="btn-primary">Call (407) 436-9921</a>
+        <a href="#services" class="btn-outline">View All Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">24<span>/7</span></div><div class="stat-label">Emergency Response</div></div>
+        <div><div class="stat-num">1<span>hr</span></div><div class="stat-label">Avg Response Time</div></div>
+        <div><div class="stat-num">100<span>%</span></div><div class="stat-label">Insurance Billed Direct</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      ★ Emergency Roof Tarping &nbsp;·&nbsp; Water Extraction &nbsp;·&nbsp; Structural Drying &nbsp;·&nbsp; Dehumidification &nbsp;·&nbsp; Board-Up Services &nbsp;·&nbsp; Debris Removal &nbsp;·&nbsp; Storm Damage Protection &nbsp;·&nbsp; Insurance Direct Billing &nbsp;&nbsp;&nbsp;
+      ★ Emergency Roof Tarping &nbsp;·&nbsp; Water Extraction &nbsp;·&nbsp; Structural Drying &nbsp;·&nbsp; Dehumidification &nbsp;·&nbsp; Board-Up Services &nbsp;·&nbsp; Debris Removal &nbsp;·&nbsp; Storm Damage Protection &nbsp;·&nbsp; Insurance Direct Billing &nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Emergency Services</h2>
+    <p class="section-sub">When a storm hits, every hour counts. We protect your property and stop damage from spreading — day or night.</p>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <span class="service-tag">Primary Service</span>
+        <span class="service-icon">🏠</span>
+        <div class="service-name">Emergency Roof Tarping</div>
+        <div class="service-desc">Temporary tarps installed immediately to stop water intrusion and protect your home from further storm damage. Our #1 service — we move fast.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🛡️</span>
+        <div class="service-name">Temporary Roof Stabilization</div>
+        <div class="service-desc">Securing lifted or exposed roofing materials to reduce risk of additional damage until permanent repairs are completed.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💧</span>
+        <div class="service-name">Water Extraction</div>
+        <div class="service-desc">Rapid removal of standing water from floors, carpets, and affected areas to limit structural damage and prevent mold.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💨</span>
+        <div class="service-name">Structural Drying</div>
+        <div class="service-desc">Commercial air movers and dehumidifiers deployed to dry walls, flooring, and building materials thoroughly.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📊</span>
+        <div class="service-name">Moisture Monitoring</div>
+        <div class="service-desc">Ongoing moisture meter inspections to ensure your property is drying properly and to document progress for your insurance claim.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🪟</span>
+        <div class="service-name">Board-Up Services</div>
+        <div class="service-desc">Emergency boarding of broken windows, doors, and openings to secure the property against weather and intruders.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌪️</span>
+        <div class="service-name">Temporary Weatherproofing</div>
+        <div class="service-desc">Protective coverings and barriers installed to shield exposed areas of the home from ongoing rain and wind.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌿</span>
+        <div class="service-name">Debris Removal</div>
+        <div class="service-desc">Clearing roofing materials, branches, and storm debris that may worsen damage or block emergency repairs.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PROCESS -->
+  <section id="process" class="process-section">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple Process</h2>
+    <p class="section-sub">We handle the heavy lifting — including your insurance claim documentation.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-title">You Call Us</div><div class="step-desc">Available 24/7. We dispatch immediately — no waiting, no runaround.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-title">We Assess & Act</div><div class="step-desc">On-site inspection, photo documentation, and same-day emergency protection.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-title">We Document</div><div class="step-desc">Detailed records, moisture readings, and photos prepared for your insurance company.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-title">Insurance Billed</div><div class="step-desc">We bill your insurance directly. Most homeowners pay nothing out of pocket.</div></div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section>
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">Built for Florida Storms</h2>
+    <p class="section-sub">We're not a national chain. We're a local Florida company that knows the market, knows the insurers, and responds like your neighbor would.</p>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-title">Insurance Expertise</div><div class="why-desc">We come from roofing sales and understand exactly what insurers need. We document everything to support your claim.</div></div>
+      <div class="why-item"><div class="why-title">Rapid Deployment</div><div class="why-desc">Storm delays cost thousands in secondary damage. We move within the hour to stop further loss.</div></div>
+      <div class="why-item"><div class="why-title">No Out-of-Pocket Cost</div><div class="why-desc">Mitigation services are covered by your homeowners insurance. We handle the billing so you don't have to.</div></div>
+      <div class="why-item"><div class="why-title">Full Documentation</div><div class="why-desc">Before-and-after photos, moisture logs, and written reports — everything your adjuster will ask for.</div></div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section id="coverage" class="coverage-section">
+    <div class="coverage-content">
+      <div>
+        <div class="section-label">Service Area</div>
+        <h2 class="section-title">Within 3 Hours of Orlando</h2>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin-bottom:20px;">Based in Orlando, we serve homeowners and properties within a 3-hour drive. If a storm hit your area, we can be there.</p>
+        <div class="insurance-note">
+          <strong>Insurance Direct Billing</strong>
+          <p>We work with all major Florida homeowners insurance providers. Our documentation process is designed to support fast claim approval — you focus on your family, we handle the paperwork.</p>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;opacity:0.85;">
+          <path d="M80 20 L90 60 L70 90 L50 130 L40 170 L30 210 L50 260 L70 300 L100 330 L130 350 L160 340 L200 310 L230 270 L250 220 L260 180 L270 150 L260 100 L240 70 L220 50 L190 30 L160 20 L140 15 L110 18 Z" fill="rgba(192,57,43,0.10)" stroke="rgba(192,57,43,0.35)" stroke-width="1.5"/>
+          <circle cx="155" cy="200" r="7" fill="#C0392B"/>
+          <circle cx="155" cy="200" r="16" fill="rgba(192,57,43,0.18)"/>
+          <circle cx="155" cy="200" r="26" fill="rgba(192,57,43,0.07)"/>
+          <circle cx="155" cy="200" r="72" stroke="rgba(192,57,43,0.25)" stroke-width="1" stroke-dasharray="5 4" fill="rgba(192,57,43,0.05)"/>
+          <text x="155" y="194" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#e8a09a" font-weight="700" letter-spacing="1">ORLANDO</text>
+          <text x="155" y="284" text-anchor="middle" font-family="Barlow,sans-serif" font-size="10" fill="rgba(240,236,228,0.45)" letter-spacing="0.5">~3-hour radius</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section id="contact" class="cta-banner">
+    <div class="cta-bg"></div>
+    <h2>Storm Hit? Call Now.</h2>
+    <p>24/7 emergency response. We'll be there.</p>
+    <a href="tel:+14074369921" class="phone-big">(407) 436-9921</a>
+    <a href="tel:+14074369921" class="btn-white">Call for Free Inspection</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <svg width="22" height="26" viewBox="0 0 38 46" fill="none"><path d="M19 2L4 9V21C4 31.5 11 40.5 19 44C27 40.5 34 31.5 34 21V9L19 2Z" fill="#C0392B"/><path d="M12 22l5 5 9-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:var(--text-primary);">SHIELD <span style="color:#C0392B;">MITIGATION</span> GROUP</span>
+      </div>
+      <div class="footer-copy">© 2025 Shield Mitigation Group · Orlando, FL · (407) 436-9921</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#coverage">Coverage</a>
+      <a href="tel:+14074369921">Call Us</a>
+    </div>
+  </footer>
+
+</body>
+</html>
